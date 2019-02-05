@@ -1,2 +1,2 @@
 # Kubernetes
-Kubernetes is a open source orchestration tool to automate,configure and co-ordinate the systems
+Kubernetes is an open source container orchestration engine for automating deployment, scaling, and management of containerized applications. The open source project is hosted by the Cloud Native Computing Foundation (CNCF)
