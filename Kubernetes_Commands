@@ -1,0 +1,79 @@
+# to know the version of kubernetes
+kubectl version
+
+# to start minikube
+minikube start
+
+# to create a deployemnt in k8s
+kubectl create deployment NAME or run below command
+# kubectl run NAME --image=image-name
+* --port=000 " to assign port number"
+* --env="key=valu" " to appy some environment variable while building" 
+* --command
+* --replicas
+kubectl run nginx --image=nginx --replicas=3
+
+#to see the deployments
+kubectl get deploy
+
+#to delete the deployment
+kubectl delete deployment NAME
+
+# to get pods
+kubectl get pods
+
+# to know description about the node
+kubectl describe pods
+
+# to get replica set of pods which is a new generation,that supports the new-set based selector 
+kubectl get rs
+
+# to create the pods from a file and it should be yaml format
+kubectl create -f filename.yaml
+
+#  to delete the pods
+kubectl delete -f filename.yaml
+
+# to update the pods
+kubectl replace -f filename.yaml
+
+# to apply the configs recursively 
+kubectl apply -R -f configs/
+
+# to scale up the deployments
+kubectl scale --replicas=10 deployment nginx
+
+# to auto scale up the deployments
+kubectl autoscale deployment nginx --max=30
+
+# to know the scaled deployments, it displays min and max deployments.
+#whenever cpu limit crosses 80% one deployment will be auto scale by above command
+kubectl get hpa
+
+# to update the deploymnets with newer version
+kubectl set image deployments nginx nginx=latest version
+
+# to create deployment by declareative commands
+kubectl apply -f ./
+
+# to see the rollout status 
+kubectl rollout status deploy "name of deployment"
+
+# to rollback for previous versions
+kubectl rollout undo deploy "name of deployemnt"
+
+# to create a service
+kubectl create service TYPE name --tcp=80:80
+
+# to see the services
+kubectl get svc
+
+
+
+
+
+
+
+
+
+
