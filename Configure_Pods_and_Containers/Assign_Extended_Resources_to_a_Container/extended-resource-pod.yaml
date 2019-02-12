@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: extended-resource-demo
+spec:
+  containers:
+  - name: extended-resource-demo-ctr
+    image: nginx
+    resources:
+      requests:
+        shris.local.com/dongle: 3
+      limits:
+        shris.local.com/dongle: 3
